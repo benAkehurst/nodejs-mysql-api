@@ -1,11 +1,15 @@
 {
   "name": "nodejs-mysql-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "boiler plate Nodejs & MySQL API",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "start": "nodemon server.js",
+    "reset": "rm -rf node_modules",
+    "reinstall": "rm -rf node_modules && npm i",
+    "security:fix": "npm audit fix"
   },
   "repository": {
     "type": "git",
@@ -19,8 +23,13 @@
   },
   "homepage": "https://github.com/benAkehurst/nodejs-mysql-api#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.6"
   }
