@@ -29,9 +29,11 @@ app.use((req, res, next) => {
 });
 app.use(cors());
 
-// Expose employee routes
+// Expose routes & methods
 const employeeRoutes = require('./src/routes/employee.routes');
 app.use('/api/v1/employees', employeeRoutes);
+const userRoutes = require('./src/routes/users.routes');
+app.use('/api/v1/users', userRoutes);
 
 const server = http.createServer(app);
 server.listen(port, () => console.log(`API running on localhost:${port}`));
